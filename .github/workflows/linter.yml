@@ -1,13 +1,15 @@
 ---
   ## Super Linter GitHub Actions ##
   name: Javascript Linter
-  run-name: ${{ github.actor }} is testing out the Javascript Linter! 🚀
+  run-name: ${{ github.actor }} is using the Javascript Linter! 🚀
 
   on:
     push:
+      branches: [ main ]
 
     pull_request:
-      branches: [master, main]
+      branches: [ main ]
+
 
   # Set the Job #
   jobs:
@@ -22,7 +24,6 @@
         packages: read
         statuses: write
 
-
       # Load all steps #
       steps:
         # Checkout the code base #
@@ -35,8 +36,10 @@
 
         # Run Linter against code base #
         - name: Lint Code Base
-          uses: super-linter/super-linter@v5
+          uses: super-linter/super-linter/slim@v5
           env:
-            VALIDATE_ALL_CODEBASE: false
+            VALIDATE_ALL_CODEBASE: true
             DEFAULT_BRANCH: master
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            VALIDATE_JAVASCRIPT_STANDARD: true
+            JAVASCRIPT_DEFAULT_STYLE: 'standard'
