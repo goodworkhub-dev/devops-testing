@@ -1,4 +1,4 @@
-name: frontendTesting
+name: Javascript Testing Suite
 run-name: ${{ github.actor }} is running Javascript tests!
 on: [push]
 jobs:
