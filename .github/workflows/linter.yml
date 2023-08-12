@@ -1,7 +1,8 @@
 ---
   ## Super Linter GitHub Actions ##
   name: Javascript Linter
-  # Start the job on all push #
+  run-name: ${{ github.actor }} is testing out the Javascript Linter! 🚀
+
   on:
     push:
       branches: [master, main]
