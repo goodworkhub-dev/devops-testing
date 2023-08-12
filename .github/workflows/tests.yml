@@ -12,4 +12,4 @@ jobs:
           node-version: '17'
       - run: npm ci
       - run: cd tests
-      - run: npm run tests
+      - run: npm run test
