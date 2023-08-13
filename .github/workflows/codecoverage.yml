@@ -1,5 +1,5 @@
-name: Javascript Testing Suite
-run-name: ${{ github.actor }} is running Javascript tests!
+name: Jest Code Coverage Report
+run-name: ${{ github.actor }} is initializing a Code Coverage Report!
 on: [push]
 jobs:
   run-defined-frontend-tests:
@@ -11,4 +11,4 @@ jobs:
         with:
           node-version: '17'
       - run: npm ci
-      - run: npm run test
+      - run: npm run coverage
